@@ -169,13 +169,13 @@ app.post('/auth/:uid/:password',(req,res)=>{
     {
         if(data[i].uid === uid && data[i].password === password)
         {
-            res.json({message:'user authentication successful'});
+            res.status(200).json({message:'user authentication successful'});
             break;
         }
 
     }
 
-    res.json({message:'user not found'});
+    res.status(500).json({message:'user not found'});
 
 });
 
